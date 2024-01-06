@@ -1,3 +1,6 @@
+'use client'
+import Link from "next/link";
+
 export default function Header() {
 	return (
         <header className="z-30 flex items-center w-full h-24 sm:h-32">
@@ -9,23 +12,23 @@ export default function Header() {
                     </svg>
                 </div>
                 <div className="flex items-center">
-                    <nav className="items-center hidden text-lg text-gray-800 uppercase font-sen dark:text-white lg:flex">
-                        <a href="#" className="flex px-6 py-2 text-indigo-500 border-b-2 border-indigo-500">
+                    <ul className="items-center hidden text-sm text-gray-800 uppercase font-sen dark:text-white lg:flex">
+                        <Link href={`/`} className="flex px-6 py-2 text-indigo-500 hover:border-b-2 border-indigo-500">
                             Home
-                        </a>
-                        <a href="#" className="flex px-6 py-2 hover:text-indigo-500">
-                            Watch
-                        </a>
-                        <a href="#" className="flex px-6 py-2 hover:text-indigo-500">
+                        </Link>
+                        <Link href={`/about`} className="flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500">
+                            About Us
+                        </Link>
+                        <a href="#" className="flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500">
                             Product
                         </a>
-                        <a href="#" className="flex px-6 py-2 hover:text-indigo-500">
-                            Contact
-                        </a>
-                        <a href="#" className="flex px-6 py-2 hover:text-indigo-500">
-                            Career
-                        </a>
-                    </nav>
+                        <Link href={`/careers`} className="flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500">
+                            Careers
+                        </Link>
+                        <Link href={`/contactus`} className="flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500">
+                            Contact Us
+                        </Link>
+                    </ul>
                     <button className="flex flex-col ml-4 lg:hidden">
                         <span className="w-6 h-1 mb-1 bg-gray-800 dark:bg-white">
                         </span>

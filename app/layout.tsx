@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import Header from "./components/Header";
 import { Inter } from "next/font/google";
+// import Monaco from "next/font/local/";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// const monaco = Monaco({
+// 	src: './Monaco 400.ttf',
+// 	display: 'swap',
+//   })
 
 export const metadata: Metadata = {
   title: "Veera Next App",
@@ -16,7 +23,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<main className="relative h-screen overflow-hidden bg-white dark:bg-gray-800">
+					<Header/>
+				{children}
+				</main>
+			</body>
 		</html>
 	);
 }
