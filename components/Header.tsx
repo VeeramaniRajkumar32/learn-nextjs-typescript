@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
 	return (
-        <header className="z-30 flex items-center w-full h-24 sm:h-32">
+        <header className="z-30 flex items-center w-full h-24 sm:h-20 bg-white dark:bg-gray-800 sticky top-0">
             <div className="container flex items-center justify-between px-6 mx-auto">
                 <div className="text-3xl font-black text-gray-800 uppercase dark:text-white">
                     <svg aria-hidden="true" focusable="false" width="100" height="100" viewBox="0 0 512 309">
@@ -19,9 +19,9 @@ export default function Header() {
                         <Link href={`/about`} className="flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500">
                             About Us
                         </Link>
-                        <a href="#" className="flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500">
-                            Product
-                        </a>
+                        <Link href={`/resources`} className="flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500">
+                            Resources
+                        </Link>
                         <Link href={`/careers`} className="flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500">
                             Careers
                         </Link>

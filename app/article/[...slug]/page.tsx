@@ -1,5 +1,5 @@
 'use client'
-import { paramsType } from '@/app/types/project.type'
+import { paramsType } from '@/types/project.type'
 
 export default function Page({ params }:{ params: paramsType }) {
     

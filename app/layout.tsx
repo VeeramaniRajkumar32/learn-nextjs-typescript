@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Header from "./components/Header";
+import Header from "../components/Header";
 import { Inter } from "next/font/google";
 // import Monaco from "next/font/local/";
 import "./globals.css";
@@ -24,9 +24,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
+				<Header />
 				<main className="relative h-screen overflow-hidden bg-white dark:bg-gray-800">
-					<Header/>
-				{children}
+					{children}
 				</main>
 			</body>
 		</html>
