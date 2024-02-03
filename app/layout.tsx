@@ -26,7 +26,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<Header />
-					<main className="relative h-screen overflow-hidden bg-white dark:bg-gray-800">
+					<main className="relative h-screen overflow-hidden bg-gradient-to-r from-violet-600 to-indigo-600 dark:bg-gray-800">
 						{children}
 					</main>
 				<Footer />

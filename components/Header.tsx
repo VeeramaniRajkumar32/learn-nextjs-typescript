@@ -35,22 +35,22 @@ export default function Header() {
               About Us
             </Link>
             {/* <Link
-              href={`/resources`}
-              className={`flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500 ${
-                pathname === "/resources" ? "text-indigo-500" : ""
-              }`}
-            >
-              Resources
-            </Link> */}
+							href={`/resources`}
+							className={`flex px-6 py-2 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500 ${
+								pathname === "/resources" ? "text-indigo-500" : ""
+							}`}
+						>
+							Resources
+						</Link> */}
 
-			<div className="group inline-block">
+            <div className="group inline-block">
               <button className="outline-none focus:outline-none px-6 py-2 rounded-sm flex items-center min-w-32">
                 <span className="pr-1 flex-1">RESOURCES</span>
               </button>
               <ul className="bg-gradient-to-r from-neutral-300 to-stone-400 dark:bg-gray-800 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
                 <Link href={`/resources/requirement`}>
                   <li className="rounded-sm px-3 py-1 hover:bg-gray-100">
-				  	Requirement
+                    Requirement
                   </li>
                 </Link>
               </ul>
