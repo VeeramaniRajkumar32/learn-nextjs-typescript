@@ -1,3 +1,9 @@
 export type paramsType = {
-    slug:string[] | null
+    slug: string[] | null
+}
+
+interface FormData {
+    name: string;
+    email: string;
+    comment: string;
 }

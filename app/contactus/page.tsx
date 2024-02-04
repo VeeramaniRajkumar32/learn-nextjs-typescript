@@ -1,31 +1,37 @@
-// import Image from "next/image";
+"use client";
+import { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 export default function ContactUs() {
-	return (
-		// <main className="flex min-h-screen flex-col items-center justify-between p-12">
-		// 	{/* <h1>Contact Us Page ❤</h1> */}
-		// <div className="bg-white dark:bg-gray-800 ">
-		//   <div className="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
-		//     <div className="card lg:card-side bg-base-100 shadow-xl">
-		//       <figure>
-		//         <img
-		//           src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg"
-		//           alt="Album"
-		//         />
-		//       </figure>
-		//       <div className="card-body">
-		//         <h2 className="card-title">New album is released!</h2>
-		//         <p>Click the button to listen on Spotiwhy app.</p>
-		//         <div className="card-actions justify-end">
-		//           <button className="btn btn-primary">Listen</button>
-		//         </div>
-		//       </div>
-		//     </div>
-		//   </div>
-		// </div>
-		// </main>
+	const {
+		contact,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm<FormData>();
 
-		<form className="flex min-h-screen flex-col items-center justify-between p-24 w-full space-x-3">
+	const onSubmit: SubmitHandler<FormData> = async (data: string) => {
+		try {
+			// const response = await fetch('/api/submit-form', {
+			// 	method: 'POST',
+			// 	body: JSON.stringify(formData),
+			// });
+			console.log(data);
+			// Handle success response
+		} catch (error) {
+			// Handle error
+		} finally {
+		}
+	};
+
+	//   const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
+
+	console.log(watch("name"));
+	return (
+		<form
+			className="flex min-h-screen flex-col items-center justify-between p-24 w-full space-x-3"
+			onSubmit={handleSubmit(onSubmit)}
+		>
 			<div className="w-full max-w-2xl px-5 py-10 m-auto mt-10 bg-gray-800 rounded-lg shadow dark:bg-gray-800">
 				<div className="mb-6 text-3xl font-light text-center text-gray-800 text-white">
 					Contact us !
@@ -36,9 +42,14 @@ export default function ContactUs() {
 							<input
 								type="text"
 								id="contact-form-name"
+								name="name"
+								defaultValue=""
+								{...contact("name")}
+								{...contact("name", { required: true })}
 								className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
 								placeholder="Name"
 							/>
+							{errors.name && <span>This field is required</span>}
 						</div>
 					</div>
 					<div className="col-span-2 lg:col-span-1">
@@ -46,22 +57,31 @@ export default function ContactUs() {
 							<input
 								type="text"
 								id="contact-form-email"
+								name="email"
+								defaultValue=""
+								{...contact("email")}
+								{...contact("email", { required: true })}
 								className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-								placeholder="email"
+								placeholder="Email"
 							/>
+							{errors.email && <span>This field is required</span>}
 						</div>
 					</div>
 					<div className="col-span-2">
-						<label className="text-gray-700" htmlFor="name">
+						<label className="text-gray-700" htmlFor="comment">
 							<textarea
 								className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
 								id="comment"
+								defaultValue=""
+								{...contact("comment")}
+								{...contact("comment", { required: true })}
 								placeholder="Enter your comment"
 								name="comment"
 								rows="5"
 								cols="40"
 							></textarea>
 						</label>
+						{errors.comment && <span>This field is required</span>}
 					</div>
 					<div className="col-span-2 text-right">
 						<button
